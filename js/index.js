@@ -84,7 +84,10 @@ function showReading() {
             hundredsText = "nine hundred";
         }
 
-        if (tens === 1) {
+        if (tens === 0) {
+            tensText = "";
+        }
+        else if (tens === 1) {
             tensText = "ten";
         } else if (tens === 2) {
             tensText = "twenty";
@@ -104,7 +107,10 @@ function showReading() {
             tensText = "ninety";
         }
 
-        if (ones === 1) {
+        if (ones === 0) {
+            onesText = "";
+        }
+        else if (ones === 1) {
             onesText = "one";
         } else if (ones === 2) {
             onesText = "two";
@@ -153,6 +159,15 @@ function showReading() {
 </div>
 `;
     }
+}
+
+function calculateDistance() {
+    var firstStudentX = +document.getElementById('firstStudentX').value;
+    var firstStudentY = +document.getElementById('firstStudentY').value;
+    var secondStudentX = +document.getElementById('secondStudentX').value;
+    var secondStudentY = +document.getElementById('secondStudentY').value;
+    var thirdStudentX = +document.getElementById('thirdStudentX').value;
+    var thirdStudentY = +document.getElementById('thirdStudentY').value;
 }
 
 
