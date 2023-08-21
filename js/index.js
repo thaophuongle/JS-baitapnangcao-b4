@@ -162,12 +162,36 @@ function showReading() {
 }
 
 function calculateDistance() {
+    var schoolX = +document.getElementById('schoolX').value;
+    var schoolY = +document.getElementById('schoolY').value;
     var firstStudentX = +document.getElementById('firstStudentX').value;
     var firstStudentY = +document.getElementById('firstStudentY').value;
     var secondStudentX = +document.getElementById('secondStudentX').value;
     var secondStudentY = +document.getElementById('secondStudentY').value;
     var thirdStudentX = +document.getElementById('thirdStudentX').value;
     var thirdStudentY = +document.getElementById('thirdStudentY').value;
+
+    var firstStudentDistance = Math.sqrt(Math.pow((schoolX - firstStudentX),2) + Math.pow((schoolY - firstStudentY),2));
+    var secondStudentDistance = Math.sqrt(Math.pow((schoolX - secondStudentX),2) + Math.pow((schoolY - secondStudentY),2));
+    var thirdStudentDistance = Math.sqrt(Math.pow((schoolX - thirdStudentX),2) + Math.pow((schoolY - thirdStudentY),2));
+
+    var maxValue;
+    if (firstStudentDistance >= secondStudentDistance && firstStudentDistance >= thirdStudentDistance) {
+        maxValue = firstStudentDistance;
+    }
+    else if (secondStudentDistance >= firstStudentDistance && secondStudentDistance >= thirdStudentDistance) {
+        maxValue = secondStudentDistance;
+    }
+    else {
+        maxValue = thirdStudentDistance;
+    }
+
+    document.getElementById('calculateHandle').innerHTML = `
+<br>
+<div>
+    <p>The furthest distance is ${maxValue}</p>
+</div>
+`;
 }
 
 
